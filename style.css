@@ -1,0 +1,181 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background: rgb(47, 150, 163);
+    font-family: sans-serif;
+    color: white;
+}
+
+.location-icon {
+    padding-top: 25px;
+}
+
+.location-icon svg {
+    width: 30px;
+    height: 30px;
+    animation: location-icon 1.5s ease infinite alternate;
+    opacity: 0.9;
+    cursor: pointer;
+}
+
+@keyframes location-icon {
+    from {
+        transform: translateY(5px);
+    }
+
+    to {
+        transform: translateY(-10px);
+    }
+}
+
+.logo {
+    fill: none;
+    stroke: #cfc33a;
+    stroke-width: 2;
+    animation: logo-color 10s ease infinite alternate;
+}
+
+@keyframes logo-color {
+    0% {
+        stroke: #ffffff;
+    }
+    50% {
+        stroke: #cfc33a;
+    }
+    100% {
+        stroke: #c50808;
+    }
+}
+
+.form {
+    position: relative;
+    width: 30%;
+    align-items: center;
+    justify-content: space-around;
+    display: flex;
+    height: 50px;
+}
+
+.form input {
+    width: 100%;
+    height: 100%;
+    font-size: 16px;
+    padding-top: 20px;
+    border: none;
+    color: whitesmoke;
+    background-color: transparent;
+    caret-color: transparent;
+    outline: none;
+    transition: all 1s ease;
+    border-bottom: 1px solid whitesmoke;
+}
+
+.form label {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.content-name {
+    width: 11.3ch;
+    white-space: nowrap;
+    overflow: hidden;
+    position: absolute;
+    bottom: 5px;
+    transition: all 0.3s ease;
+    border-right: 2px solid #cfc33a;
+
+    animation:
+        input 1s step-end infinite,
+        input-anim 3.8s ease infinite;
+}
+
+@keyframes input {
+    0% {
+        border-color: #cfc33a;
+    }
+
+    50% {
+        border-color: transparent;
+    }
+
+    100% {
+        border-color: #cfc33a;
+    }
+}
+
+@keyframes input-anim {
+    from {
+        width: 0;
+    }
+}
+
+.form input:focus {
+    border-bottom-color: #cfc33a; 
+    transition: all 1s ease;
+}
+
+.form input:valid+.label-name .content-name {
+    transform: translateY(-150%);
+    font-size: 14px;
+    border-right: transparent;
+    color: rgb(47, 150, 163)
+}
+
+.location,
+.temperature {
+    height: 30vh;
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.temperature {
+    flex-direction: column;
+}
+
+.degree-section {
+    display: flex;
+    align-items: center;
+}
+
+.degree-section span {
+    margin: 10px;
+    font-size: 30px;
+}
+
+.degree-section h2 {
+    font-size: 40px;
+}
+
+.temperature span {
+    opacity: 0.6;
+    font-size: 40px;
+}
+
+img {
+    width: 230px;
+    display: flex;
+    opacity: 0.6;
+}
+
+.powered {
+    position: absolute;
+    bottom: 1vh;
+    justify-content: space-around;
+    align-items: center;
+}
